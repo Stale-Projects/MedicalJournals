@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace MedicalJournals.Controllers
 {
+    //Onlyy registered users are allowed here. Any user should first go to the Logon/ Register page
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -26,5 +28,20 @@ namespace MedicalJournals.Controllers
 
             return View();
         }
+
+        //Landing Page for Publishers
+        [Authorize(Roles="Publisher")]
+        public ActionResult Publishers()
+        {
+            return View();
+        }
+
+        //Landing Page for Public Users
+        [Authorize(Roles="Public")]
+        public ActionResult Public()
+        {
+            return View();
+        }
+
     }
 }
