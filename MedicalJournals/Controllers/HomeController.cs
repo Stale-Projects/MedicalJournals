@@ -30,14 +30,14 @@ namespace MedicalJournals.Controllers
         }
 
         //Landing Page for Publishers
-        [Authorize(Roles="Publisher")]
+        //[Authorize(Roles="Publisher")]
         public ActionResult Publishers()
         {
             return View();
         }
 
         //Landing Page for Public Users
-        [Authorize(Roles="Public")]
+        //[Authorize(Roles="Public")]
         public ActionResult Public()
         {
             return View();
